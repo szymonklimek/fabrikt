@@ -1,5 +1,6 @@
 package com.cjbooms.fabrikt.cli
 
+import com.cjbooms.fabrikt.VersionCatalogLibraries
 import com.cjbooms.fabrikt.generators.JakartaAnnotations
 import com.cjbooms.fabrikt.generators.JavaxValidationAnnotations
 import com.cjbooms.fabrikt.generators.NoValidationAnnotations
@@ -40,7 +41,7 @@ enum class ClientCodeGenOptionType(
     ) {
         override fun requiredDependencies(): List<DependencyNotation> =
             listOf(
-                COMPILE.dependencyOf("io.github.resilience4j:resilience4j-circuitbreaker:2.1.0"),
+                COMPILE.dependencyOf(VersionCatalogLibraries.resilience4j_circuitbreaker),
             )
     },
     SUSPEND_MODIFIER("This option adds the suspend modifier to the generated client functions (only for OpenFeign clients)") {
